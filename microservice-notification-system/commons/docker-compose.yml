@@ -1,0 +1,13 @@
+services:
+  couchbase:
+    image: couchbase:community
+    container_name: couchbase
+    ports:
+      - "8091-8094:8091-8094"   # UI + Query + Index
+      - "11210:11210"           # data (KV)
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8091/ui/index.html"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    # fără env "magice" – vom inițializa explicit cu CLI după ce pornește

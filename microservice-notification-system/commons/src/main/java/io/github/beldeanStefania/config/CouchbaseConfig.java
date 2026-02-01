@@ -20,6 +20,7 @@ import org.springframework.data.couchbase.repository.config.EnableCouchbaseRepos
 import java.time.Duration;
 
 @Configuration
+///
 @PropertySource("classpath:application.properties")
 @EnableCouchbaseRepositories(basePackages = "io.github.beldeanStefania.repository")
 public class CouchbaseConfig extends AbstractCouchbaseConfiguration {
